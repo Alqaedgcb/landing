@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>تمت إزالتها من بعض الصفحات — متاح 72 ساعة</title>
+<style>
+  :root{--accent:#e11d48;--bg:#071026;--muted:#94a3b8}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:linear-gradient(180deg,#071026 0%,#081026 100%);color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+  .wrap{max-width:820px;width:100%}
+  .card{background:rgba(255,255,255,0.03);padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.6)}
+  h1{font-size:24px;margin:0 0 10px}
+  p.lead{color:var(--muted);margin:0 0 18px;line-height:1.5}
+  .mock{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+  .mock img{width:calc(33.33% - 8px);border-radius:10px;object-fit:cover}
+  .cta{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+  .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08)}
+  .small{font-size:13px;color:var(--muted);margin-top:12px}
+  .countdown{display:inline-block;background:#071331;padding:8px 12px;border-radius:10px;font-weight:700;color:#a7f3d0;margin-left:8px}
+  footer{margin-top:18px;color:var(--muted);font-size:13px}
+  @media(max-width:600px){
+    .mock img{width:100%}
+    h1{font-size:20px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>تمت إزالة هذا المنتج من بعض المشاركات — هل تجرؤ أن تراه؟</h1>
+      <p class="lead">إصدار محدود يعمل فقط 72 ساعة. هذا ليس منتجًا عادياً — إنه تجربة ورمز. أول 100 طلب يحصلون على هدية رقمية.</p>
+
+      <div class="mock">
+        <img alt="Mock 1" src="https://via.placeholder.com/600x800?text=Mockup+1" />
+        <img alt="Mock 2" src="https://via.placeholder.com/600x800?text=Mockup+2" />
+        <img alt="Mock 3" src="https://via.placeholder.com/600x800?text=Mockup+3" />
+      </div>
+
+      <div>
+        <span class="countdown" id="timer">72:00:00</span>
+        <div style="margin-top:12px" class="cta">
+          <!-- غيّر الرقم داخل wa.me إلى رقمك بصيغة السعودية: 9665XXXXXXXX -->
+          <a class="btn" id="buyBtn" href="https://wa.me/9665XXXXXXXX?text=مرحبًا%20–%20أريد%20طلب%20النسخة%20المحظورة%20(رمز:%20LAUNCH)%20الاسم:%20__%20الجوال:%20__%20العنوان:%20__%20الحجم:%20__" target="_blank">اشتري عبر واتساب</a>
+          <a class="btn ghost" href="#info">المزيد من المعلومات</a>
+        </div>
+      </div>
+
+      <div id="info" style="margin-top:18px">
+        <p class="small">طريقة الطلب: اضغط "اشتري عبر واتساب" وأرسل بياناتك. بعد التأكيد سيُرسل رابط دفع آمن. المنتج يُطبع عند الطلب ويُشحن خلال أيام العمل حسب مزوّد الطباعة.</p>
+        <p class="small">ملاحظة: حافظ على الحملة ضمن الحدود القانونية والأخلاقية—لا ادعاءات عن جهات رسمية أو محتوى حساس.</p>
+      </div>
+
+      <footer>متاح 72 ساعة فقط — النسخة التجريبية الأولى. © منتج الظل</footer>
+    </div>
+  </div>
+
+<script>
+  const target = Date.now() + 72*3600*1000;
+  function updateTimer(){
+    const diff = Math.max(0, target - Date.now());
+    const h = String(Math.floor(diff/3600000)).padStart(2,'0');
+    const m = String(Math.floor(diff%3600000/60000)).padStart(2,'0');
+    const s = String(Math.floor(diff%60000/1000)).padStart(2,'0');
+    document.getElementById('timer').innerText = h+':'+m+':'+s;
+    if(diff>0) setTimeout(updateTimer,1000);
+  }
+  updateTimer();
+</script>
+</body>
+</html>
