@@ -3,100 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LEXA AI - المستقبل في التجارة الذكية</title>
+  <title>LEXA AI - المتجر الذكي العصري</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
 
-    * {margin:0; padding:0; box-sizing:border-box;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family:'Tajawal', sans-serif;
-      background: radial-gradient(circle at top, #0d0d0d, #000);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:100vh;
-      text-align:center;
-      overflow:hidden;
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #030303 0%, #101820 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    .container {
-      animation: fadeIn 1.5s ease forwards;
-      max-width:600px;
-      padding:20px;
+    .hero {
+      padding: 40px 20px;
+      max-width: 700px;
+      animation: fadeIn 1.5s ease-in-out forwards;
     }
 
-    h1 {
-      font-size:2.4rem;
-      background: linear-gradient(90deg,#00ffaa,#00ccff);
-      -webkit-background-clip:text;
-      color:transparent;
-      margin-bottom:15px;
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #00ffcc, #00ccff);
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    p {
-      font-size:1.1rem;
-      color:#ccc;
-      line-height:1.8;
-      margin-bottom:30px;
+    .hero p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #d1d1d1;
+      margin-bottom: 25px;
     }
 
-    a.whatsapp-btn {
-      display:inline-block;
-      padding:15px 35px;
-      background:#25D366;
-      color:#fff;
-      border-radius:50px;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:1.1rem;
-      transition:0.3s ease;
-      box-shadow:0 0 20px rgba(37,211,102,0.4);
+    .cta {
+      display: inline-block;
+      padding: 16px 38px;
+      background: #25D366;
+      border-radius: 50px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      box-shadow: 0 0 25px rgba(37,211,102,0.4);
+      transition: all 0.3s ease;
     }
 
-    a.whatsapp-btn:hover {
-      transform:scale(1.08);
-      box-shadow:0 0 35px rgba(37,211,102,0.8);
+    .cta:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 35px rgba(37,211,102,0.8);
     }
 
-    .glow {
-      position:absolute;
-      width:400px;
-      height:400px;
-      background:radial-gradient(circle, rgba(0,255,200,0.15), transparent 70%);
-      top:-100px;
-      right:-100px;
-      filter:blur(80px);
-      animation: float 6s ease-in-out infinite alternate;
+    .tagline {
+      font-size: 1rem;
+      margin-top: 10px;
+      color: #00ffcc;
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.05);
+      width: 100%;
+      text-align: center;
+      color: #bbb;
+    }
+
+    footer span {
+      display: inline-block;
+      margin: 0 10px;
+    }
+
+    .bg-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0,255,200,0.2), transparent 70%);
+      top: -150px;
+      right: -100px;
+      filter: blur(100px);
+      animation: float 7s ease-in-out infinite alternate;
+      z-index: 0;
     }
 
     @keyframes float {
-      from {transform:translateY(0);}
-      to {transform:translateY(40px);}
+      from { transform: translateY(0px); }
+      to { transform: translateY(50px); }
     }
 
     @keyframes fadeIn {
-      from {opacity:0; transform:translateY(30px);}
-      to {opacity:1; transform:translateY(0);}
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+      .cta { font-size: 1rem; padding: 14px 28px; }
     }
   </style>
 </head>
-<body>
-  <div class="glow"></div>
 
-  <div class="container">
+<body>
+  <div class="bg-glow"></div>
+
+  <section class="hero">
     <h1>LEXA AI</h1>
     <p>
-      نظام تجارة إلكترونية ذكي يجمع بين الابتكار والذكاء الاصطناعي.  
-      متجر المستقبل الذي يبيع نفسه بنفسه 🚀  
-      انضم الآن إلى التجربة الأذكى في عالم التجارة الرقمية.
+      متجر ذكي قائم على الذكاء الاصطناعي 🚀  
+      يدمج التقنية، الفهم السلوكي، وتحليل السوق ليبيع منتجاته بنفسه.  
+      مستقبل التجارة يبدأ من هنا.
     </p>
-    <a href="https://wa.me/967776086053?text=مرحباً%20👋%20أرغب%20في%20التعرف%20على%20LEXA%20AI%20النظام%20الذكي%20للتجارة%20الإلكترونية."
+
+    <a href="https://wa.me/9677XXXXXXX?text=مرحباً%20👋%20أرغب%20في%20معرفة%20المزيد%20عن%20LEXA%20AI%20المتجر%20الذكي."
        target="_blank"
-       class="whatsapp-btn">
+       class="cta">
        تواصل عبر واتساب 💬
     </a>
-  </div>
+
+    <div class="tagline">عرض محدود — أول 100 اشتراك فقط</div>
+  </section>
+
+  <footer>
+    <span>✅ شحن سريع</span>
+    <span>🔒 ضمان الأمان</span>
+    <span>💳 الدفع عند الاستلام</span>
+  </footer>
 </body>
 </html>
-
