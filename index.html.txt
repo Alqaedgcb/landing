@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LEXA AI - المتجر الذكي العصري</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
@@ -69,11 +69,6 @@
       animation: pulse 2s infinite alternate;
     }
 
-    @keyframes pulse {
-      from { opacity: 0.7; }
-      to { opacity: 1; }
-    }
-
     footer {
       margin-top: 60px;
       padding: 20px;
@@ -111,14 +106,60 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-      .cta { font-size: 1rem; padding: 14px 28px; }
+    @keyframes pulse {
+      from { opacity: 0.7; }
+      to { opacity: 1; }
+    }
+
+    /* ==== مكون المحادثة ==== */
+    .chat-bubble {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      background: #fff;
+      color: #000;
+      border-radius: 15px;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      max-width: 260px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease;
+      line-height: 1.6;
+      z-index: 1000;
+    }
+
+    .chat-bubble.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(37,211,102,0.5);
+      cursor: pointer;
+      z-index: 999;
+      transition: 0.3s ease;
+    }
+
+    .chat-btn:hover { transform: scale(1.1); }
+
+    .chat-btn img {
+      width: 35px;
+      height: 35px;
     }
   </style>
 </head>
-
 <body>
   <div class="bg-glow"></div>
 
@@ -130,7 +171,7 @@
       مستقبل التجارة يبدأ من هنا.
     </p>
 
-    <a href="https://wa.me/967776086053?text=مرحباً%20👋%20أرغب%20في%20معرفة%20المزيد%20عن%20LEXA%20AI%20المتجر%20الذكي."
+    <a href="https://wa.me/9677XXXXXXX?text=مرحباً%20👋%20أرغب%20في%20معرفة%20المزيد%20عن%20LEXA%20AI%20المتجر%20الذكي."
        target="_blank"
        class="cta">
        تواصل عبر واتساب 💬
@@ -139,11 +180,42 @@
     <div class="tagline">عرض محدود — أول 100 اشتراك فقط</div>
   </section>
 
+  <!-- فقاعة الدردشة -->
+  <div class="chat-bubble" id="chatBubble">
+    👋 مرحباً! أنا مساعد LEXA الذكي 🤖  
+    هل ترغب أن أساعدك في اختيار المنتج الأنسب لك؟
+    <br><br>
+    <a href="https://wa.me/967776086053?text=مرحباً%20LEXA%20AI%20أرغب%20في%20استشارتك%20حول%20أفضل%20المنتجات."
+       target="_blank"
+       style="display:inline-block;background:#25D366;color:#fff;padding:6px 14px;border-radius:8px;text-decoration:none;margin-top:8px;font-weight:bold;font-size:0.9rem;">
+       نعم، تابع عبر واتساب 💬
+    </a>
+  </div>
+
+  <!-- زر الدردشة -->
+  <div class="chat-btn" id="chatBtn">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat" />
+  </div>
+
   <footer>
     <span>✅ شحن سريع</span>
     <span>🔒 ضمان الأمان</span>
     <span>💳 الدفع عند الاستلام</span>
   </footer>
+
+  <script>
+    const chatBubble = document.getElementById("chatBubble");
+    const chatBtn = document.getElementById("chatBtn");
+
+    // ظهور فقاعة الدردشة بعد 5 ثوانٍ
+    setTimeout(() => {
+      chatBubble.classList.add("show");
+    }, 5000);
+
+    // النقر على الزر يعرض أو يخفي الفقاعة
+    chatBtn.addEventListener("click", () => {
+      chatBubble.classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
-
